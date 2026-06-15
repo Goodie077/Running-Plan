@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B1220">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="HM Plan">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.png">
+<title>Half Marathon Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1220;--bg-2:#0F1729;--card:#131C30;--card-2:#18233B;--line:#243149;--line-2:#1B2740;--ink:#F1F5FB;--muted:#8A99B5;--muted-2:#5E6E8C;--green:#34D399;--green-d:#10B981;--orange:#F59E42;--blue:#4F8FF0;--violet:#9B7CF0;--red:#F2554D;--pink:#E06BD6;}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:calc(72px + env(safe-area-inset-bottom));}
+.wrap{max-width:480px;margin:0 auto;padding:0 14px;}
+.mono{font-family:'JetBrains Mono',monospace;}
+.hero{position:relative;border-radius:0 0 22px 22px;overflow:hidden;margin-bottom:14px;background:linear-gradient(160deg,#16233f 0%,#0d1526 55%,#0B1220 100%);}
+.hero .glow{position:absolute;right:-60px;top:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(79,143,240,.35),transparent 65%);filter:blur(8px);}
+.hero .curve{position:absolute;right:0;bottom:0;width:60%;height:120px;opacity:.9;}
+.hero-inner{position:relative;padding:22px 18px 20px;}
+.brand{display:flex;align-items:center;gap:8px;margin-bottom:18px;}
+.brand .logo{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;font-size:14px;}
+.brand .nm{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);}
+.hero h1{font-size:30px;font-weight:900;letter-spacing:-.03em;line-height:1;}
+.hero h1 .s{color:var(--blue);}
+.hero .date{color:var(--green);font-size:13px;font-weight:600;margin-top:5px;}
+.hero .days{display:flex;align-items:baseline;gap:8px;margin-top:18px;}
+.hero .days .n{font-size:46px;font-weight:900;letter-spacing:-.04em;line-height:.9;}
+.hero .days .lbl{font-size:12px;color:var(--muted);font-weight:600;}
+.prog{margin-top:14px;}
+.prog .ptop{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:600;}
+.prog .bar{height:7px;border-radius:99px;background:#1c283f;overflow:hidden;}
+.prog .fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green),var(--green-d));}
+.phasebar{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 15px;margin-bottom:14px;align-items:center;}
+.phasebar .seg{flex:1;}
+.phasebar .k{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:700;margin-bottom:3px;}
+.phasebar .v{font-size:15px;font-weight:800;}
+.phasebar .arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted);flex:0 0 auto;cursor:pointer;}
+.phasebar .divider{width:1px;align-self:stretch;background:var(--line);margin:0 13px;}
+.eyebrow{display:flex;align-items:center;justify-content:space-between;margin:0 2px 9px;}
+.eyebrow h2{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.eyebrow .meta{font-size:11px;color:var(--muted-2);font-weight:600;}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;}
+.chart{width:100%;display:block;}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;}
+.legend .it{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);font-weight:600;}
+.legend .sw{width:10px;height:10px;border-radius:3px;}
+.statrow{display:flex;gap:10px;margin-top:14px;}
+.statrow .st{flex:1;background:var(--card-2);border-radius:11px;padding:11px 8px;text-align:center;}
+.statrow .st .l{font-size:10px;color:var(--muted);font-weight:600;margin-bottom:4px;letter-spacing:.04em;}
+.statrow .st .v{font-size:19px;font-weight:800;}
+.cw-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;}
+.cw-head .wk{font-size:23px;font-weight:900;letter-spacing:-.02em;}
+.cw-head .dt{font-size:12px;color:var(--muted);margin-top:1px;}
+.cw-head .km{text-align:right;}
+.cw-head .km .n{font-size:20px;font-weight:800;}
+.cw-head .km .l{font-size:11px;color:var(--muted);}
+.tendon-flag{display:inline-flex;align-items:center;gap:6px;background:rgba(242,85,77,.13);border:1px solid rgba(242,85,77,.3);color:#F8908A;font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;margin:10px 0 4px;}
+.day{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line-2);}
+.day:last-child{border-bottom:none;}
+.day .dd{width:34px;font-size:12px;font-weight:700;color:var(--muted);flex:0 0 auto;}
+.day .ic{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex:0 0 auto;}
+.day .info{flex:1;min-width:0;}
+.day .info .t{font-size:14px;font-weight:700;}
+.day .info .d{font-size:11.5px;color:var(--muted);}
+.day .amt{font-size:13px;font-weight:700;color:var(--muted);flex:0 0 auto;}
+.cw-foot{display:flex;gap:12px;margin-top:14px;}
+.cw-foot .b{flex:1;background:var(--card-2);border-radius:11px;padding:12px;}
+.cw-foot .b .l{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);font-weight:700;margin-bottom:6px;}
+.cw-foot .b .v{font-size:16px;font-weight:800;display:flex;align-items:center;gap:6px;}
+.cw-foot .b .mini{height:6px;border-radius:99px;background:#1c283f;margin-top:8px;overflow:hidden;}
+.cw-foot .b .mini i{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--green-d));border-radius:99px;}
+.tl{position:relative;}
+.tl .node{display:flex;gap:14px;position:relative;padding-bottom:18px;}
+.tl .node:last-child{padding-bottom:0;}
+.tl .dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;flex:0 0 auto;z-index:2;}
+.tl .line{position:absolute;left:18px;top:38px;bottom:-2px;width:2px;background:var(--line);z-index:1;}
+.tl .node:last-child .line{display:none;}
+.tl .body .nm{font-size:15px;font-weight:800;}
+.tl .body .when{font-size:11px;color:var(--muted-2);font-weight:600;margin:1px 0 4px;}
+.tl .body .desc{font-size:12px;color:var(--muted);line-height:1.45;}
+.hl-scroll{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+.hl-scroll::-webkit-scrollbar{display:none;}
+.hl{flex:0 0 auto;width:120px;background:var(--card-2);border:1px solid var(--line);border-radius:13px;padding:13px;cursor:pointer;}
+.hl .ic{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;margin-bottom:9px;}
+.hl .wk{font-size:10px;color:var(--muted-2);font-weight:700;letter-spacing:.06em;}
+.hl .t{font-size:13px;font-weight:700;line-height:1.2;margin-top:2px;}
+.weeks{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.weeks button{width:38px;height:38px;border-radius:10px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--muted);font-family:'JetBrains Mono';font-weight:600;font-size:13px;position:relative;}
+.weeks button.sel{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+.weeks button .pip{position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;border:2px solid var(--bg);}
+.card{background:var(--card);border:1px solid var(--line);border-left-width:4px;border-radius:13px;padding:14px 15px;margin-bottom:10px;}
+.card h4{font-size:15px;font-weight:800;margin-bottom:6px;display:flex;gap:8px;align-items:center;}
+.card p{font-size:13px;color:#AFBCD4;line-height:1.6;}
+.pace-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+.pace-row .nm{font-weight:700;font-size:14px;}
+.pace-row .nt{font-size:12px;color:var(--muted);}
+.pace-row .val{font-family:'JetBrains Mono';font-weight:600;font-size:16px;color:var(--orange);white-space:nowrap;}
+.specs{font-family:'JetBrains Mono';font-size:12px;color:#AFBCD4;line-height:1.75;white-space:pre-wrap;}
+.note{background:rgba(242,85,77,.1);border:1px solid rgba(242,85,77,.28);border-radius:13px;padding:14px;margin-bottom:14px;font-size:12.5px;color:#F4A9A4;line-height:1.6;}
+.note b{color:#F8C9C5;}
+.shoe{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:13px;}
+.shoe:last-child{border-bottom:none;}
+.shoe span{color:var(--muted);}
+h2.sec{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:4px;}
+p.lead{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(15,23,41,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.tabbar .inner{max-width:480px;margin:0 auto;display:flex;}
+.tabbar button{flex:1;background:none;border:none;cursor:pointer;color:var(--muted-2);display:flex;flex-direction:column;align-items:center;gap:3px;font-family:'Inter';font-size:10px;font-weight:600;padding:4px 0;}
+.tabbar button svg{width:21px;height:21px;}
+.tabbar button[aria-selected="true"]{color:var(--green);}
+.hidden{display:none;}
+.loading{text-align:center;padding:80px 20px;color:var(--muted);}
+.loading .sp{width:28px;height:28px;border:3px solid var(--line);border-top-color:var(--green);border-radius:50%;margin:0 auto 14px;animation:spin .8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ver{text-align:center;font-size:10px;color:var(--muted-2);padding:6px 0 0;font-family:'JetBrains Mono';}
+.errbox{margin:20px;padding:16px;border:1px solid var(--red);border-radius:12px;background:rgba(242,85,77,.1);color:#F4A9A4;font-size:13px;line-height:1.6;}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div class="loading"><div class="sp"></div>Loading your plan…</div>
+</div>
+
+<script>
+const ICONS={run:"\ud83c\udfc3",bolt:"\u26a1",target:"\ud83c\udfaf",flag:"\ud83c\udfc1"};
+const TYPES={
+  rest:{c:"#5E6E8C",bg:"#1c283f",ic:"\u263e"},easy:{c:"#34D399",bg:"rgba(52,211,153,.15)",ic:"\ud83c\udfc3"},
+  intervals:{c:"#F59E42",bg:"rgba(245,158,66,.15)",ic:"\u26a1"},tempo:{c:"#F2554D",bg:"rgba(242,85,77,.15)",ic:"\ud83d\udd25"},
+  long:{c:"#4F8FF0",bg:"rgba(79,143,240,.15)",ic:"\ud83c\udfc3"},cross:{c:"#9B7CF0",bg:"rgba(155,124,240,.15)",ic:"\ud83d\udeb4"},
+  race:{c:"#F2554D",bg:"rgba(242,85,77,.18)",ic:"\ud83c\udfc1"},strength:{c:"#E06BD6",bg:"rgba(224,107,214,.15)",ic:"\ud83c\udfcb\ufe0f"}
+};
+let D=null,selWeek=1,curWeek=1;
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const phaseOf=w=>D.phases.find(p=>p.id===w.p);
+const resolve=(week,raw)=>{ if(typeof raw==='string'&&raw[0]==='@'){const k=raw.slice(1);return D.strength[k]?D.strength[k].d:raw;} return raw; };
+const resolveLabel=(raw)=>{ if(typeof raw==='string'&&raw[0]==='@'){const k=raw.slice(1);return D.strength[k]?D.strength[k].l:raw;} return raw; };
+
+// Load data (network-first so updates show; cache fallback offline via service worker)
+async function load(){
+  try{
+    const res=await fetch('plan-data.json?ts='+Date.now(),{cache:'no-store'});
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    D=await res.json();
+    boot();
+  }catch(e){
+    // try the service-worker cached copy
+    try{const res=await fetch('plan-data.json');D=await res.json();boot();}
+    catch(e2){
+      $("#app").innerHTML='<div class="errbox"><b>Couldn\u2019t load the plan.</b><br>If you\u2019re online, the data file may be missing next to index.html. If offline, open the app once while connected so it can cache.<br><br>'+e.message+'</div>';
+    }
+  }
+}
+
+function boot(){
+  selWeek=curWeek=computeWeek();
+  $("#app").innerHTML=shell();
+  renderOverview();renderStatic();
+  $$("#tabbar button").forEach(b=>b.onclick=()=>go(b.dataset.tab));
+  buildWeeks();buildCW();
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
+}
+
+function computeWeek(){
+  const start=new Date(D.meta.planStart+"T00:00:00"),now=new Date();
+  let wk=Math.floor((now-start)/(7*86400000))+1;
+  return Math.min(D.meta.totalWeeks,Math.max(1,wk));
+}
+
+function shell(){return `
+<section id="tab-overview">
+  <div class="hero"><div class="glow"></div>
+    <svg class="curve" viewBox="0 0 300 120" preserveAspectRatio="none"><defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#4F8FF0"/></linearGradient></defs><path d="M0,115 C80,110 150,70 220,40 C250,28 280,18 300,12" fill="none" stroke="url(#cg)" stroke-width="3" stroke-linecap="round"/><circle cx="220" cy="40" r="5" fill="#fff"/></svg>
+    <div class="hero-inner">
+      <div class="brand"><div class="logo">\ud83c\udfc3</div><div class="nm">RUNNING COMPANION</div></div>
+      <h1>Half Marathon <span class="s">\u00b7</span></h1>
+      <div class="date">Target ${D.meta.goalLabel} \u00b7 ${D.meta.goalDatePretty}</div>
+      <div class="days"><div class="n" id="days">\u2014</div><div class="lbl">days to go</div></div>
+      <div class="prog"><div class="ptop"><span id="progpct">\u2014</span><span id="progwk">\u2014</span></div><div class="bar"><div class="fill" id="progfill" style="width:0%"></div></div></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="phasebar"><div class="seg"><div class="k">Current phase</div><div class="v" id="curphase">\u2014</div></div><div class="divider"></div><div class="seg"><div class="k">Next milestone</div><div class="v" id="nextms" style="font-size:14px">\u2014</div></div><div class="arrow" onclick="go('plan')">\u2192</div></div>
+    <div class="eyebrow"><h2>Weekly volume &amp; forecast</h2><span class="meta" id="peaklbl"></span></div>
+    <div class="panel"><svg class="chart" id="volchart" viewBox="0 0 340 170" preserveAspectRatio="none"></svg><div class="legend" id="vollegend"></div></div>
+    <div class="eyebrow"><h2>Projected HM fitness</h2><span class="meta">estimate</span></div>
+    <div class="panel"><svg class="chart" id="fitchart" viewBox="0 0 340 160" preserveAspectRatio="none"></svg>
+      <div class="statrow"><div class="st"><div class="l">Today</div><div class="v" style="color:var(--green)">${D.forecast.todayPct}%</div></div><div class="st"><div class="l">Peak (Wk 16)</div><div class="v" style="color:var(--blue)">${D.forecast.peakPct}%</div></div><div class="st"><div class="l">Race day</div><div class="v" style="color:var(--violet)">${D.forecast.racePct}%</div></div></div>
+      <div class="statrow"><div class="st"><div class="l">Pred. now</div><div class="v mono" style="font-size:17px;color:var(--green)">${D.forecast.predToday}</div></div><div class="st"><div class="l">Pred. peak</div><div class="v mono" style="font-size:17px;color:var(--blue)">${D.forecast.predPeak}</div></div><div class="st"><div class="l">Pred. race</div><div class="v mono" style="font-size:17px;color:var(--violet)">${D.forecast.predRace}</div></div></div>
+      <p style="font-size:10.5px;color:var(--muted-2);margin-top:10px;text-align:center">${D.forecast.disclaimer}</p>
+    </div>
+    <div class="eyebrow"><h2>Training phases</h2></div>
+    <div class="panel"><div class="tl" id="timeline"></div></div>
+    <div class="eyebrow"><h2>Upcoming highlights</h2><span class="meta" onclick="go('plan')" style="cursor:pointer">View plan \u203a</span></div>
+    <div class="hl-scroll" id="highlights"></div>
+    <div class="ver">v${D.meta.version}</div>
+    <div style="height:14px"></div>
+  </div>
+</section>
+<section id="tab-plan" class="hidden"><div class="wrap" style="padding-top:18px"><div class="eyebrow"><h2>Training plan</h2><span class="meta">${D.meta.totalWeeks} weeks</span></div><div class="weeks" id="weeks"></div><div class="panel" id="cwpanel"></div></div></section>
+<section id="tab-paces" class="hidden"><div class="wrap" style="padding-top:18px"><h2 class="sec">Pace guide</h2><p class="lead">Calibrated to your 1:30 half. Re-tune after the Wk 10 &amp; 16 races.</p><div id="paces"></div><div class="card" style="border-left-color:var(--violet);margin-top:6px"><h4>\ud83d\udc5f Shoe rotation</h4><div id="shoes"></div></div></div></section>
+<section id="tab-garmin" class="hidden"><div class="wrap" style="padding-top:18px"><h2 class="sec">Garmin setup</h2><p class="lead">No app can push these in for you \u2014 build each once, reuse forever.</p><div class="note">Garmin Connect won\u2019t accept workout file uploads through its app. Build each session once in <b>Garmin Connect \u2192 Training &amp; Planning \u2192 Workouts \u2192 Create Workout</b>, then drag onto your calendar each week. It syncs to your watch and guides you rep by rep.</div><div id="garmin"></div></div></section>
+<section id="tab-tips" class="hidden"><div class="wrap" style="padding-top:18px"><h2 class="sec">Coach tips</h2><p class="lead">The principles that make the sessions add up.</p><div id="tips"></div></div></section>
+<div class="tabbar"><div class="inner" id="tabbar">
+  <button data-tab="overview" aria-selected="true"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V21H3z" stroke-linejoin="round"/></svg>Overview</button>
+  <button data-tab="plan" aria-selected="false"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>Plan</button>
+  <button data-tab="paces" aria-selected="false"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 12l4-3" stroke-linecap="round"/></svg>Paces</button>
+  <button data-tab="garmin" aria-selected="false"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2" stroke-linecap="round"/></svg>Garmin</button>
+  <button data-tab="tips" aria-selected="false"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 00-4-10z" stroke-linejoin="round"/></svg>Tips</button>
+</div></div>`;}
+
+function renderOverview(){
+  const race=new Date(D.meta.goalDate+"T09:00:00"),now=new Date();
+  $("#days").textContent=Math.max(0,Math.ceil((race-now)/86400000));
+  const pct=Math.min(100,Math.max(0,Math.round((curWeek-1)/D.meta.totalWeeks*100)));
+  $("#progpct").textContent=pct+"% of training complete";
+  $("#progwk").textContent="Week "+curWeek+" of "+D.meta.totalWeeks;
+  $("#progfill").style.width=pct+"%";
+  const ph=phaseOf(D.weeks.find(x=>x.w===curWeek));
+  $("#curphase").textContent=ph.name;
+  const next=D.phases.find(p=>p.id===ph.id+1);
+  $("#nextms").textContent=next?next.name:"Race Day";
+  // volume chart
+  (function(){const W=340,H=170,pad=18,maxKm=50,n=D.weeks.length;
+    const x=i=>pad+i*((W-pad*2)/(n-1)),y=v=>H-22-(v/maxKm)*(H-40);
+    let bars="",pts=[];
+    D.weeks.forEach((w,i)=>{const p=phaseOf(w),bw=(W-pad*2)/n*0.74,bx=x(i)-bw/2,by=y(D.volume[w.w]),hl=w.w===curWeek;
+      bars+='<rect x="'+bx+'" y="'+by+'" width="'+bw+'" height="'+(H-22-by)+'" rx="2" fill="'+p.color+'" opacity="'+(hl?1:.55)+'"/>';
+      if(hl)bars+='<rect x="'+(bx-1)+'" y="'+(by-1)+'" width="'+(bw+2)+'" height="'+(H-22-by+1)+'" rx="2" fill="none" stroke="#fff" stroke-width="1.4"/>';
+      pts.push([x(i),by]);});
+    let path="M"+pts.map(p=>p[0]+","+p[1]).join(" L");
+    let dots=pts.map((p,i)=>'<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(i===12?3.5:1.8)+'" fill="#fff"/>').join("");
+    const lbl='<text x="'+pts[12][0]+'" y="'+(pts[12][1]-8)+'" fill="#fff" font-size="9" font-family="JetBrains Mono" text-anchor="middle" font-weight="600">46km</text>';
+    let ax="";[0,15,30,45].forEach(v=>{ax+='<text x="2" y="'+(y(v)+3)+'" fill="#5E6E8C" font-size="8" font-family="JetBrains Mono">'+v+'</text>';});
+    ["Wk 1","Wk 6","Wk 11","Wk 16","Wk 21"].forEach((t,i)=>{const xi=pad+[0,5,10,15,20][i]*((W-pad*2)/(n-1));ax+='<text x="'+xi+'" y="'+(H-6)+'" fill="#5E6E8C" font-size="8" font-family="JetBrains Mono" text-anchor="middle">'+t+'</text>';});
+    $("#volchart").innerHTML=bars+'<path d="'+path+'" fill="none" stroke="#fff" stroke-width="1.6" opacity=".85"/>'+dots+lbl+ax;
+    $("#peaklbl").textContent=D.peakLabel;
+    let lg="";D.phases.forEach(p=>lg+='<div class="it"><div class="sw" style="background:'+p.color+'"></div>'+p.name+'</div>');$("#vollegend").innerHTML=lg;})();
+  // fitness chart
+  (function(){const W=340,H=160,pad=20,fp=D.forecast.fitnessPoints;
+    const x=i=>pad+i*((W-pad*2)/11),y=v=>H-26-(v/100)*(H-46);
+    let solid="M"+fp.map((v,i)=>x(i)+","+y(v)).join(" L");
+    let dash="M"+x(9)+","+y(D.forecast.peakPct)+" Q"+x(10.2)+","+y(88)+" "+x(11)+","+y(D.forecast.racePct);
+    let area=solid+" L"+x(9)+","+(H-26)+" L"+x(0)+","+(H-26)+" Z";
+    let dots=fp.map((v,i)=>'<circle cx="'+x(i)+'" cy="'+y(v)+'" r="2.4" fill="#4F8FF0"/>').join("");
+    dots+='<circle cx="'+x(9)+'" cy="'+y(D.forecast.peakPct)+'" r="4" fill="#fff"/><circle cx="'+x(11)+'" cy="'+y(D.forecast.racePct)+'" r="3" fill="#9B7CF0"/>';
+    let ax="";[0,25,50,75,100].forEach(v=>{ax+='<text x="2" y="'+(y(v)+3)+'" fill="#5E6E8C" font-size="8" font-family="JetBrains Mono">'+v+'</text>';});
+    ["Now","Wk 10","Peak","Race"].forEach((t,i)=>{const xi=x([0,5,9,11][i]);ax+='<text x="'+xi+'" y="'+(H-6)+'" fill="#5E6E8C" font-size="8" font-family="JetBrains Mono" text-anchor="'+(i===0?'start':i===3?'end':'middle')+'">'+t+'</text>';});
+    const pk='<text x="'+x(9)+'" y="'+(y(D.forecast.peakPct)-9)+'" fill="#4F8FF0" font-size="10" font-weight="800" text-anchor="middle">'+D.forecast.peakPct+'%</text>';
+    $("#fitchart").innerHTML='<defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4F8FF0" stop-opacity=".35"/><stop offset="1" stop-color="#34D399" stop-opacity="0"/></linearGradient></defs><path d="'+area+'" fill="url(#fg)"/><path d="'+solid+'" fill="none" stroke="#4F8FF0" stroke-width="2"/><path d="'+dash+'" fill="none" stroke="#9B7CF0" stroke-width="2" stroke-dasharray="4 4"/>'+dots+pk+ax;})();
+  // timeline
+  (function(){let h="";D.phases.forEach(p=>{const isNow=p.id===phaseOf(D.weeks.find(x=>x.w===curWeek)).id;
+    h+='<div class="node"><div class="line"></div><div class="dot" style="background:'+p.color+'">'+(ICONS[p.icon]||"")+'</div><div class="body"><div class="nm" style="color:'+p.color+'">'+p.name+(isNow?' \u00b7 <span style="color:var(--muted);font-size:11px">Now</span>':'')+'</div><div class="when">'+p.when+'</div><div class="desc">'+p.desc+'</div></div></div>';});
+    $("#timeline").innerHTML=h;})();
+  // highlights
+  (function(){let h="";D.highlights.forEach(function(it){var wk=it[0],type=it[1],label=it[2],t=TYPES[type];
+    h+='<div class="hl" onclick="selWeek='+wk+';go(\'plan\')"><div class="ic" style="background:'+t.bg+';color:'+t.c+'">'+t.ic+'</div><div class="wk">WK '+wk+'</div><div class="t">'+label+'</div></div>';});
+    $("#highlights").innerHTML=h;})();
+}
+
+function buildWeeks(){let h="";D.weeks.forEach(w=>{const isRace=w.s.some(s=>s[1]==="race");
+  let pip="";if(w.recovery||w.taper||isRace){const c=isRace?"#F2554D":w.taper?"#9B7CF0":"#34D399";pip='<span class="pip" style="background:'+c+'"></span>';}
+  h+='<button class="'+(w.w===selWeek?'sel':'')+'" onclick="selWeek='+w.w+';buildWeeks();buildCW();">'+w.w+pip+'</button>';});
+  $("#weeks").innerHTML=h;}
+
+function buildCW(){const w=D.weeks.find(x=>x.w===selWeek),ph=phaseOf(w);
+  let tag="";
+  if(w.tendon)tag='<div class="tendon-flag">\ud83e\ude79 Tendon / hip care</div>';
+  else if(w.recovery)tag='<div class="tendon-flag" style="background:rgba(52,211,153,.13);border-color:rgba(52,211,153,.3);color:#7BE3BC">\ud83c\udf3f Recovery week</div>';
+  else if(w.taper)tag='<div class="tendon-flag" style="background:rgba(155,124,240,.13);border-color:rgba(155,124,240,.3);color:#C3ACF7">\ud83c\udfc1 Taper</div>';
+  let days="";w.s.forEach(function(sx){var d=sx[0],type=sx[1],label=sx[2],amt=sx[3],detail=sx[4],t=TYPES[type];
+    days+='<div class="day"><div class="dd">'+d+'</div><div class="ic" style="background:'+t.bg+';color:'+t.c+'">'+t.ic+'</div><div class="info"><div class="t">'+resolveLabel(label)+'</div><div class="d">'+resolve(w,detail)+'</div></div><div class="amt">'+(amt&&amt!=="\u2014"?amt:"\u2014")+'</div></div>';});
+  const wkProg=w.w<curWeek?100:w.w>curWeek?0:40;
+  $("#cwpanel").innerHTML='<div class="cw-head"><div><div class="wk">Week '+w.w+'</div><div class="dt">'+w.dt+' \u00b7 '+ph.name+'</div></div><div class="km"><div class="n">'+D.volume[w.w]+'km</div><div class="l">planned</div></div></div>'+tag+days+'<div class="cw-foot"><div class="b"><div class="l">Week progress</div><div class="v">'+wkProg+'%</div><div class="mini"><i style="width:'+wkProg+'%"></i></div></div><div class="b"><div class="l">Tendon status</div><div class="v" style="color:'+(w.tendon?"#F8908A":"#34D399")+'">'+(w.tendon?"Monitor \u26a0":"Good \u2713")+'</div></div></div>';}
+
+function renderStatic(){
+  let p="";D.paces.forEach(it=>p+='<div class="card" style="border-left-color:var(--orange)"><div class="pace-row"><div><div class="nm">'+it[0]+'</div><div class="nt">'+it[2]+'</div></div><div class="val">'+it[1]+'</div></div></div>');$("#paces").innerHTML=p;
+  let s="";D.shoes.forEach(it=>s+='<div class="shoe"><b>'+it[0]+'</b><span>'+it[1]+'</span></div>');$("#shoes").innerHTML=s;
+  let g="";D.garmin.forEach(it=>g+='<div class="card" style="border-left-color:'+it[1]+'"><h4>'+it[0]+'</h4><div class="specs">'+it[2].join("\n")+'</div></div>');$("#garmin").innerHTML=g;
+  let t="";D.tips.forEach(it=>t+='<div class="card" style="border-left-color:'+it[2]+'"><h4>'+it[0]+' '+it[1]+'</h4><p>'+it[3]+'</p></div>');$("#tips").innerHTML=t;
+}
+
+function go(tab){$$("#tabbar button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===tab));
+  ["overview","plan","paces","garmin","tips"].forEach(id=>$("#tab-"+id).classList.toggle("hidden",id!==tab));
+  if(tab==="plan"){buildWeeks();buildCW();}window.scrollTo({top:0,behavior:"smooth"});}
+
+load();
+</script>
+</body>
+</html>

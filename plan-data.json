@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "version": "2026-06-15",
+    "athlete": "Athlete",
+    "goalLabel": "Sub 1:28",
+    "goalDate": "2026-11-08",
+    "goalDatePretty": "8 November 2026",
+    "planStart": "2026-06-14",
+    "totalWeeks": 21,
+    "note": "Edit this file to update the plan. Bump 'version' each time so you can tell which build you're looking at."
+  },
+  "forecast": {
+    "fitnessPoints": [12, 22, 33, 42, 55, 68, 78, 86, 92, 95],
+    "peakPct": 95,
+    "racePct": 90,
+    "todayPct": 60,
+    "predToday": "~1:31",
+    "predPeak": "~1:27",
+    "predRace": "~1:28",
+    "disclaimer": "Rough estimates from a 1:30 base. Re-tune after the Wk 10 & 16 races. Assumes the hip settles and training runs uninterrupted."
+  },
+  "phases": [
+    { "id": 1, "name": "Rehab & Base", "color": "#34D399", "icon": "run", "when": "Now \u2013 27 Jun", "desc": "Build aerobic base, strengthen tendons, improve durability." },
+    { "id": 2, "name": "Speed Foundation", "color": "#F59E42", "icon": "bolt", "when": "28 Jun \u2013 22 Aug", "desc": "Introduce speed, improve threshold, build strength." },
+    { "id": 3, "name": "HM Specific", "color": "#4F8FF0", "icon": "target", "when": "23 Aug \u2013 17 Oct", "desc": "Race-specific work, longer intervals, peak volume." },
+    { "id": 4, "name": "Taper", "color": "#9B7CF0", "icon": "flag", "when": "18 Oct \u2013 8 Nov", "desc": "Reduce volume, maintain intensity, arrive fresh." }
+  ],
+  "volume": { "1":23,"2":27,"3":30,"4":23,"5":34,"6":36,"7":38,"8":27,"9":39,"10":26,"11":41,"12":43,"13":46,"14":30,"15":46,"16":28,"17":41,"18":46,"19":31,"20":24,"21":18 },
+  "peakLabel": "Peak 46km \u00b7 Wk 13",
+  "strength": {
+    "rehab": { "l": "Strength \u2014 Rehab", "d": "Isometrics. Wall sits 5\u00d745s \u00b7 Spanish squats 3\u00d712 \u00b7 hip thrust 3\u00d712 light \u00b7 calf raises 3\u00d720 \u00b7 single-leg deadlift 3\u00d710. ~25 min." },
+    "build": { "l": "Strength \u2014 Build", "d": "Goblet squats 3\u00d712 \u00b7 Bulgarian split squats 3\u00d710 \u00b7 RDL 3\u00d712 \u00b7 step-ups 3\u00d712 \u00b7 hip thrust 3\u00d712 \u00b7 calf raises 4\u00d720. ~35 min, add weight." },
+    "spec": { "l": "Strength \u2014 Power", "d": "Single-leg squats 3\u00d710 \u00b7 barbell RDL 3\u00d710 \u00b7 reverse lunges 3\u00d712 \u00b7 box jumps 3\u00d78 \u00b7 Nordic curls 3\u00d76 \u00b7 calf raises 4\u00d720. ~35 min." },
+    "taper": { "l": "Strength \u2014 Maintenance", "d": "Light only. BW squats 2\u00d712 \u00b7 hip thrust 2\u00d712 \u00b7 calf raises 2\u00d720 \u00b7 single-leg deadlift 2\u00d78. ~15 min." },
+    "recov": { "l": "Strength \u2014 Light", "d": "Recovery week. Wall sits 3\u00d730s \u00b7 hip thrust 2\u00d712 \u00b7 calf raises 2\u00d715. ~15 min." }
+  },
+  "weeks": [
+    { "w":1, "p":1, "dt":"14\u201320 Jun", "tendon":true, "s":[["Mon","strength","@rehab","45 min","Light tonight given the hip \u2014 isometrics only, skip loaded leg work until assessed."],["Tue","intervals","Intervals","6km","3\u00d71600m @ 3:55\u20134:10. Stop if hip flares."],["Wed","cross","Swim","1.5km","Zero-impact cross-train."],["Thu","easy","Easy Run","5km","Flat, 5:20\u20135:30. No downhills."],["Fri","cross","Golf","\u2014","Counts as cross-train day."],["Sat","long","Long Run","10km","Easy, flat. Tendon/hip check."],["Sun","easy","Recovery Walk","\u2014","30 min gentle."]] },
+    { "w":2, "p":1, "dt":"21\u201327 Jun", "tendon":true, "s":[["Mon","strength","@rehab","45 min","@rehab"],["Tue","intervals","Intervals","6km","Controlled, 5\u20136 reps."],["Wed","easy","Easy Run","6km","Check the hip."],["Thu","cross","Cross-train","\u2014","Cycle, swim or golf."],["Fri","rest","Rest","\u2014","Full rest."],["Sat","easy","Easy Run","7km","Easy."],["Sun","long","Long Run","14km","Easy, flat."]] },
+    { "w":3, "p":1, "dt":"28 Jun\u20134 Jul", "tendon":true, "s":[["Mon","strength","@rehab","45 min","@rehab"],["Tue","intervals","Intervals","\u2014","Full session if pain-free."],["Wed","easy","Easy Run","6km","Easy."],["Thu","cross","Cross-train","\u2014","Cycle or swim."],["Fri","tempo","Light Tempo","7km","2km + 3km @ 4:30 + 2km."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Long Run","15km","Easy."]] },
+    { "w":4, "p":1, "dt":"5\u201311 Jul", "recovery":true, "s":[["Mon","strength","@recov","15 min","@recov"],["Tue","intervals","Intervals","\u2014","Easy, recovery week."],["Wed","easy","Easy Run","5km","Very easy."],["Thu","cross","Cross-train","\u2014","Golf, swim or cycle."],["Fri","rest","Rest","\u2014","Rest."],["Sat","easy","Easy Run","6km","Easy."],["Sun","long","Long Run","12km","Easy."]] },
+    { "w":5, "p":2, "dt":"12\u201318 Jul", "s":[["Mon","strength","@build","35 min","@build"],["Tue","intervals","Intervals","\u2014","Full session, start pushing."],["Wed","easy","Easy + Strides","6km","HR cap 140 + 6\u00d7100m strides."],["Thu","cross","Cross-train","\u2014","Cycle, swim or golf."],["Fri","tempo","Threshold","9km","2km + 5km @ 4:25 + 2km."],["Sat","easy","Parkrun / Easy","5km","5k benchmark or easy + strides."],["Sun","long","Long Run","16km","Easy, HR cap 145. Gel /40 min."]] },
+    { "w":6, "p":2, "dt":"19\u201325 Jul", "s":[["Mon","strength","@build","35 min","@build"],["Tue","intervals","Intervals","\u2014","Full session."],["Wed","easy","Easy + Strides","7km","+ 6\u00d7100m strides."],["Thu","cross","Cross-train","\u2014","Cycle or swim."],["Fri","tempo","Threshold","10km","2km + 6km @ 4:25 + 2km."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Long Run","17km","Easy."]] },
+    { "w":7, "p":2, "dt":"26 Jul\u20131 Aug", "s":[["Mon","strength","@build","35 min","@build"],["Tue","intervals","Intervals","\u2014","Full session."],["Wed","easy","Easy Run","7km","HR cap 140."],["Thu","cross","Cross-train","\u2014","Golf, cycle or swim."],["Fri","tempo","Threshold","11km","2km + 7km @ 4:20 + 2km."],["Sat","easy","Parkrun / Easy","6km","Parkrun or easy + strides."],["Sun","long","Long Run","18km","Easy. Gel /40 min."]] },
+    { "w":8, "p":2, "dt":"2\u20138 Aug", "recovery":true, "s":[["Mon","strength","@recov","15 min","@recov"],["Tue","intervals","Intervals","\u2014","Lighter."],["Wed","easy","Easy Run","5km","Easy."],["Thu","cross","Cross-train","\u2014","Easy cycle or swim."],["Fri","rest","Rest","\u2014","Rest."],["Sat","easy","Easy Run","6km","Easy."],["Sun","long","Long Run","14km","Easy."]] },
+    { "w":9, "p":2, "dt":"9\u201315 Aug", "s":[["Mon","strength","@build","35 min","@build"],["Tue","intervals","Intervals","\u2014","Full session."],["Wed","easy","Easy + Strides","6km","+ 6\u00d7100m strides."],["Thu","cross","Cross-train","\u2014","Cycle or golf."],["Fri","tempo","Tempo","12km","2km + 8km @ 4:18 + 2km."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Long Run","19km","Easy. Gel /40 min."]] },
+    { "w":10, "p":2, "dt":"16\u201322 Aug", "s":[["Mon","strength","@recov","15 min","Light before race week."],["Tue","intervals","Intervals","\u2014","Light \u2014 race coming."],["Wed","easy","Easy Run","5km","Easy."],["Thu","rest","Rest","\u2014","Legs fresh."],["Fri","easy","Shakeout","3km","+ strides."],["Sat","race","\ud83c\udfc1 5k / 10k Race","\u2014","Full effort. Re-tune paces after."],["Sun","easy","Recovery","5km","Very easy."]] },
+    { "w":11, "p":3, "dt":"23\u201329 Aug", "s":[["Mon","strength","@spec","35 min","@spec"],["Tue","intervals","Intervals","\u2014","Full session."],["Wed","easy","Easy Run","7km","HR cap 140."],["Thu","cross","Cross-train","\u2014","Cycle, swim or golf."],["Fri","tempo","HM Pace","12km","2km + 8km @ 4:15 + 2km."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Long Run","20km","Easy. Gel /40 min."]] },
+    { "w":12, "p":3, "dt":"30 Aug\u20135 Sep", "s":[["Mon","strength","@spec","35 min","@spec"],["Tue","intervals","Intervals","\u2014","Full session."],["Wed","easy","Easy Run","7km","Easy."],["Thu","cross","Cross-train","\u2014","Cycle or swim."],["Fri","tempo","Threshold","13km","2km + 9km @ 4:20 + 2km."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Quality Long","21km","16km easy + 5km @ 4:15."]] },
+    { "w":13, "p":3, "dt":"6\u201312 Sep", "s":[["Mon","strength","@spec","35 min","@spec"],["Tue","intervals","Intervals","\u2014","Full session."],["Wed","easy","Easy Run","8km","Easy."],["Thu","cross","Cross-train","\u2014","Golf, cycle or swim."],["Fri","tempo","Tempo","14km","2km + 10km @ 4:20 + 2km."],["Sat","easy","Parkrun","5km","Controlled fast, not all-out."],["Sun","long","Long Run","22km","Easy. Gel /40 min."]] },
+    { "w":14, "p":3, "dt":"13\u201319 Sep", "recovery":true, "s":[["Mon","strength","@recov","15 min","@recov"],["Tue","intervals","Intervals","\u2014","Lighter."],["Wed","easy","Easy Run","6km","Easy."],["Thu","cross","Cross-train","\u2014","Easy cycle or swim."],["Fri","rest","Rest","\u2014","Rest."],["Sat","easy","Easy Run","6km","Easy."],["Sun","long","Long Run","16km","Drop-back."]] },
+    { "w":15, "p":3, "dt":"20\u201326 Sep", "s":[["Mon","strength","@spec","35 min","@spec"],["Tue","intervals","Intervals","\u2014","Full session."],["Wed","easy","Easy + Strides","8km","+ 6\u00d7100m strides."],["Thu","cross","Cross-train","\u2014","Cycle or golf."],["Fri","tempo","HM Pace","14km","2km + 10km @ 4:11 + 2km. Race pace."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Quality Long","22km","16km easy + 6km @ 4:15."]] },
+    { "w":16, "p":3, "dt":"27 Sep\u20133 Oct", "s":[["Mon","strength","@recov","15 min","Light before race weekend."],["Tue","intervals","Intervals","\u2014","Light, race this weekend."],["Wed","easy","Easy Run","5km","Easy."],["Thu","rest","Rest","\u2014","Rest."],["Fri","easy","Shakeout","3km","+ 4\u00d7100m strides."],["Sat","race","\ud83c\udfc1 Tune-up Race","\u2014","Half (~1:29) or 10k (sub-42)."],["Sun","easy","Recovery","5km","Easy or rest."]] },
+    { "w":17, "p":3, "dt":"4\u201310 Oct", "s":[["Mon","strength","@spec","35 min","Ease in if race legs sore."],["Tue","intervals","Intervals","\u2014","Back into it if legs feel good."],["Wed","easy","Easy Run","7km","Easy."],["Thu","cross","Cross-train","\u2014","Cycle, swim or golf."],["Fri","tempo","Tempo","12km","2km + 8km @ 4:15 + 2km."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Long Run","20km","Last 4km @ 4:15."]] },
+    { "w":18, "p":3, "dt":"11\u201317 Oct", "s":[["Mon","strength","@spec","35 min","Last heavy session of block."],["Tue","intervals","Intervals","\u2014","Last hard intervals."],["Wed","easy","Easy Run","8km","Easy."],["Thu","cross","Cross-train","\u2014","Cycle or swim \u2014 not golf."],["Fri","tempo","Final Tempo","14km","2km + 10km @ 4:15 + 2km."],["Sat","rest","Rest","\u2014","Protect the legs."],["Sun","long","Final Long","22km","15km easy + 7km @ 4:15."]] },
+    { "w":19, "p":4, "dt":"18\u201324 Oct", "taper":true, "s":[["Mon","strength","@taper","15 min","@taper"],["Tue","intervals","Intervals","\u2014","Shorter, 4\u20135 reps."],["Wed","easy","Easy Run","6km","Easy."],["Thu","cross","Cross-train","\u2014","Easy swim, no hard cycling."],["Fri","tempo","Short Tempo","9km","2km + 5km @ 4:11 + 2km."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Long Run","16km","Easy. Don't panic at lower km."]] },
+    { "w":20, "p":4, "dt":"25\u201331 Oct", "taper":true, "s":[["Mon","strength","@taper","15 min","@taper"],["Tue","intervals","Intervals","\u2014","3\u20134 reps. Sharp, not tired."],["Wed","easy","Easy Run","5km","Easy."],["Thu","cross","Cross-train","\u2014","Light swim, no golf."],["Fri","tempo","Race Strides","6km","3km + 3\u00d71km @ 4:11."],["Sat","rest","Rest","\u2014","Rest."],["Sun","long","Medium Run","13km","Easy. Last longer run."]] },
+    { "w":21, "p":4, "dt":"1\u20138 Nov", "taper":true, "s":[["Mon","rest","Rest","\u2014","Nothing adds fitness now."],["Tue","easy","Easy Run","4km","Skip club intervals."],["Wed","rest","Rest","\u2014","Optional mobility."],["Thu","easy","Shakeout","3km","+ 4\u00d7100m strides. Legs springy."],["Fri","rest","Rest","\u2014","Prep kit, pin number."],["Sat","rest","Rest","\u2014","Off feet, hydrate, eat well."],["Sun","race","\ud83c\udfc1 RACE DAY","21.1km","Sub-1:28. First 5km @ 4:13, settle 4:11."]] }
+  ],
+  "highlights": [
+    [4,"strength","Strength Focus"],[6,"tempo","First Speed Work"],[10,"race","5k/10k Race"],[11,"long","Peak Long Runs"],[15,"tempo","Peak Week"],[16,"race","Tune-up Race"],[21,"race","Race Day \u00b7 8 Nov"]
+  ],
+  "paces": [
+    ["Easy / Long run","5:10\u20135:30/km","Conversational."],
+    ["Threshold / Tempo","4:20\u20134:30/km","Comfortably hard."],
+    ["HM Race Pace","4:11/km","The target."],
+    ["Club Intervals","3:50\u20134:00/km","Hard but controlled."],
+    ["Recovery jog","5:45\u20136:15/km","After hard days / golf / cycling."]
+  ],
+  "shoes": [
+    ["Nike Vomero+","Easy & long runs"],
+    ["Adidas Evo SL","Tempo & threshold"],
+    ["NB SC Elite","Race day only"],
+    ["Adidas P4","Intervals / track"]
+  ],
+  "garmin": [
+    ["Easy Run","#34D399",["Run: by distance (e.g. 6km)","Target: 5:10\u20135:30/km \u00b7 HR cap 140","Slow down if HR drifts >140"]],
+    ["Threshold / Tempo","#F2554D",["Warm up: 2km @ 5:20\u20135:40","Run: by distance @ 4:20\u20134:30","Cool down: 2km @ 5:20\u20135:40"]],
+    ["HM Pace Run","#4F8FF0",["Warm up: 2km @ 5:20\u20135:40","Run: by distance @ 4:08\u20134:13","Cool down: 2km @ 5:20\u20135:40"]],
+    ["Intervals \u2014 3\u00d71600m","#F59E42",["Warm up: 2km + 4\u00d7100m strides","Repeat 3\u00d7:","  \u00b7 1600m @ 3:55\u20134:10","  \u00b7 Recover 2:00 walk/jog","Cool down: 1.5km"]],
+    ["Long Run (+ finish)","#9B7CF0",["Easy @ 5:10\u20135:30 \u00b7 HR cap 145","Finish @ 4:11 when specified","Gel every 40 min on 16km+"]]
+  ],
+  "tips": [
+    ["\ud83e\ude79","Hip / tendon \u2014 priority now","#F2554D","Pain has shifted toward the front of the hip and shows at rest in the mornings \u2014 two signals to stop self-managing and get assessed. Keep loading light until a physio sees it. The plan keeps; the hip is the priority. None of this block's value is lost by taking a week or two to sort it."],
+    ["\ud83c\udfcb\ufe0f","Monday leg strength","#E06BD6","Placed after Sunday's long run as active recovery that builds resilience. Progresses rehab \u2192 build \u2192 power \u2192 maintenance. Hip thrusts (swapped in for glute bridges) and calf work are the running-specific links \u2014 but all loaded leg work pauses until the hip is assessed."],
+    ["\ud83c\udf9a\ufe0f","Easy means easy","#34D399","Cap easy runs near 140 bpm. Your Strava showed easy pace drifting \u2014 discipline here is what lets the quality sessions land."],
+    ["\u26a1","Strides twice a week","#9B7CF0","6\u00d7100m after two easy runs in the speed phase. Big neuromuscular gain, low load, gentle on grass."],
+    ["\ud83c\udf4c","Fuel the long ones","#F59E42","Gel every ~40 min on runs 16km+. Train the gut now so race day isn't a surprise."],
+    ["\ud83d\udd01","If you miss a session","#F2554D","Miss one run: skip it. Miss 3+ days: resume at the current week's start. Miss a week: repeat the prior week. Consistency beats heroics."],
+    ["\u26f3","Golf / cycling / swimming","#34D399","Golf = your Thursday cross-train (10\u201314km walking). Cycling = aerobic, zero tendon load; long rides replace a run. Swimming = ideal, zero impact, any day."],
+    ["\ud83d\udcca","Adjusting as you go","#F59E42","A starting structure, not a contract. As Strava comes in I'll tighten paces \u2014 especially after the Wk 10 & 16 races."],
+    ["\ud83c\udfc1","Race day strategy","#4F8FF0","First 5km @ 4:13 \u2014 should feel easy. Settle to 4:11. Strong at 16km? Push. Negative splits win half marathons."]
+  ]
+}
