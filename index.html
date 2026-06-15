@@ -23,7 +23,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--i
 .hero{position:relative;border-radius:0 0 22px 22px;overflow:hidden;margin-bottom:14px;background:linear-gradient(160deg,#16233f 0%,#0d1526 55%,#0B1220 100%);}
 .hero .glow{position:absolute;right:-60px;top:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(79,143,240,.35),transparent 65%);filter:blur(8px);}
 .hero .curve{position:absolute;right:0;bottom:0;width:60%;height:120px;opacity:.9;}
-.hero-inner{position:relative;padding:22px 18px 20px;}
+.hero-inner{position:relative;padding:calc(22px + env(safe-area-inset-top)) 18px 20px;}
 .brand{display:flex;align-items:center;gap:8px;margin-bottom:18px;}
 .brand .logo{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;font-size:14px;}
 .brand .nm{font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);}
